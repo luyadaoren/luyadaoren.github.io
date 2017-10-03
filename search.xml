@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[读书 - 人类简史]]></title>
+    <url>%2F2017%2F10%2F03%2F%E8%AF%BB%E4%B9%A6-%E4%BA%BA%E7%B1%BB%E7%AE%80%E5%8F%B2%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[树莓派做webserver]]></title>
     <url>%2F2017%2F10%2F03%2F%E6%A0%91%E8%8E%93%E6%B4%BE%E5%81%9Awebserver%2F</url>
     <content type="text"><![CDATA[准备 树莓派2代B型 无线网卡 树莓派做本地web server 安装Raspbian OS 以树莓派2代B型为例。 树莓派无线网卡上网建议购买Pi时顺便买个USB无线网卡，某宝20多元一个，我用的就是下图这个，这个在Raspbian系统上是即插即用的，因为Raspbian本身已经包含了它的驱动。插上无线网卡，Pi上电完成之后，在命令行模式下，使用iwconfig查看下无线网卡是否已经被Pi识别出来，如图wlan0就是网线网卡（截图是无线网卡已经连接上家里路由器了，TP-LINK_LEWIS正是家里无线路由器的SSID）接下来需要配置无线网卡使Pi能够通过无线网卡连接到家里的无线路由器，修改配置文件：1sudo vi /etc/network/interfaces（Raspbian默认是没有安装vim的，这里可以使用nano代替vi） wpa-psk就是家里路由器的无线密码。 注意：这里配置的是静态IP地址192.168.1.110而不是DHCP动态获取IP的方式。为什么要用静态IP呢？因为后面要用到端口映射，Pi的IP变来变去的话，端口映射也就得跟着改来改去实在不方便。 修改完配置文件保存后，重启Pi的网络：sudo /etc/init.d/networking restart 使用ifconfig查看网络配置是否生效： Pi已经通过USB无线网卡连接到家里的路由器了! 用个人电脑管理树莓派 树莓派webserver安装和配置 树莓派做外网可访问的web server]]></content>
