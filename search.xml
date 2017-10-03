@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Windows下用github和Hexo创建博客]]></title>
+    <url>%2F2017%2F10%2F03%2FWindows%E4%B8%8B%E7%94%A8github%E5%92%8CHexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[Here we go准备 Windows 7/10 64bits Hexo v3.x.y nodejs 64 bits git for windows setup安装软件 安装nodejs下载安装nodejs: (http://www.runoob.com/nodejs/nodejs-install-setup.html) 安装git下载安装git: (http://git-scm.com/download/) 安装Hexo并创建本地博客1234567$ cd /d/$ mkdir hexo # 建立文件夹放本地博客$ cd hexo$ npm install -g hexo # 安装hexo$ hexo init$ hexo g # 或者hexo generate, 生成本地博客静态页面$ hexo s # 或者hexo server, 启动本地web服务, http://localhost:4000/本地查看博客主页 注册github并建立repo 注册github账号免费注册：www.github.com注册完记住你的邮箱地址和用户名例如abcd, 用户名就是你的github账号 建立博客用的repo登录github后, 点击左上角图标, 选择”New repository”, 填写”Repository Name”,注意一定符合下面的格式,最后”Create repository”, abcd.github.io的repo就建好了。abcd.github.io(abcd就是你实际注册的github账号)本地hexo博客部署到github 修改hexo配置打开hexo/_config.yml, 修改为如下123456# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: git repository: https://abcd@github.com/abcd/abcd.github.io.git # 使用https方式部署到远程repo，abcd是你实际注册的github账号 branch: master 远程repo的地址可以从github里查到, 进入你的repo: abcd.github.io, 点击”clone or download”, 点击”use https”, 里面的地址就是你的远程repo地址.注意_config.yml里的地址还需要配置用户名@,否则后面部署时会报错.https://github.com/abcd/abcd.github.io.git (远程repo地址)https://abcd@github.com/abcd/abcd.github.io.git (加了用户名的远程repo地址) 推送到远程repo 12345$ git init$ git add .$ git commit -m &quot;first commit&quot;$ git remote add origin git@github.com:abcd/abcd.github.io.git$ git push -u origin master 本地重新生成并部署到远程repo 12$ hexo generate$ hexo deploy #或者组合命令 hexo d -g 如果出现错误:1ERROR Deployer not found: git 则需要安装1npm install hexo-deployer-git --save]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>github, hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[lalal]]></title>
     <url>%2F2017%2F10%2F03%2Flalal%2F</url>
     <content type="text"><![CDATA[We are world]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2017%2F10%2F03%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
