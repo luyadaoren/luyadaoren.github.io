@@ -1,47 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[读书-三体]]></title>
-    <url>%2F2017%2F10%2F16%2F%E8%AF%BB%E4%B9%A6-%E4%B8%89%E4%BD%93%2F</url>
-    <content type="text"><![CDATA[我高中时代就开始读刘慈欣的作品了，那时他写短篇和长篇科幻小说，&lt;!--more--&gt; 他是科幻世界杂志的常客。那个年代，中国科幻作家为数不多，刘慈欣的作品风格与其他人不同。他的作品想象瑰丽宏大，视角往往是宇宙太阳系，而且他有理科背景，所以作品是比较硬气的，行话叫做硬科幻。所以读到他的三体时，自然觉得想象力很出色，但并没有感到特别的震撼，因为我对他作品风格是熟悉的。还是熟悉的味道，只是短篇变成了长篇。当全世界都在膜拜三体时，连高晓松都在节目里说这是十年来最好的小说时，我仅微微一笑。读完第一部，正在读第二部，希望能震撼到我。 这是一部理工科出身的人都会喜欢的书。]]></content>
-      <categories>
-        <category>科幻</category>
-      </categories>
-      <tags>
-        <tag>三体，科幻</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[读书 - 人类简史]]></title>
-    <url>%2F2017%2F10%2F03%2F%E8%AF%BB%E4%B9%A6-%E4%BA%BA%E7%B1%BB%E7%AE%80%E5%8F%B2%2F</url>
-    <content type="text"><![CDATA[刚开始看这本书&lt;人类简史: A Brief History of Humankind&gt;这书作者是尤瓦尔·赫拉利，犹太人，以色列历史学家，牛津大学博士, 70后，我想很多人是奔着作者来看书的。这书本质上还不能算是历史书，豆瓣上有人说是博物书，大概正确。因为作者从非常大视角，用非常短的篇幅讲述了人类的历史。仅仅时间轴线上有历史书的特点，但叙述人类文明的进展，用的都是生物学、心理学、地理学、物理学等的知识。所以作者知识渊博，涉猎广泛，这种类型的历史学家真的很少。作者有的观点真的振聋发聩，比如作者认为世界上没有国家，没有公平和正义，这些都是智人时代人们想象出来的概念，用来组织大规模的人群。而这种煽动和八卦的能力，正是智人超越了其他人类族群的原因之一]]></content>
-      <categories>
-        <category>历史</category>
-      </categories>
-      <tags>
-        <tag>人类简史</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[树莓派做webserver]]></title>
-    <url>%2F2017%2F10%2F03%2F%E6%A0%91%E8%8E%93%E6%B4%BE%E5%81%9Awebserver%2F</url>
-    <content type="text"><![CDATA[准备 树莓派2代B型 无线网卡树莓派做本地web server 安装Raspbian OS以树莓派2代B型为例。 树莓派无线网卡上网建议购买Pi时顺便买个USB无线网卡，某宝20多元一个，我用的就是下图这个，这个在Raspbian系统上是即插即用的，因为Raspbian本身已经包含了它的驱动。插上无线网卡，Pi上电完成之后，在命令行模式下，使用iwconfig查看下无线网卡是否已经被Pi识别出来，如图wlan0就是网线网卡（截图是无线网卡已经连接上家里路由器了，TP-LINK_LEWIS正是家里无线路由器的SSID）接下来需要配置无线网卡使Pi能够通过无线网卡连接到家里的无线路由器，修改配置文件：1sudo vi /etc/network/interfaces（Raspbian默认是没有安装vim的，这里可以使用nano代替vi） wpa-psk就是家里路由器的无线密码。注意：这里配置的是静态IP地址192.168.1.110而不是DHCP动态获取IP的方式。为什么要用静态IP呢？因为后面要用到端口映射，Pi的IP变来变去的话，端口映射也就得跟着改来改去实在不方便。修改完配置文件保存后，重启Pi的网络：1sudo /etc/init.d/networking restart 使用ifconfig查看网络配置是否生效：Pi已经通过USB无线网卡连接到家里的路由器了! 用个人电脑管理树莓派 树莓派webserver安装和配置 树莓派做外网可访问的web server]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-      <tags>
-        <tag>树莓派, Raspbian</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Windows下用github和Hexo创建博客]]></title>
-    <url>%2F2017%2F10%2F03%2FWindows%E4%B8%8B%E7%94%A8github%E5%92%8CHexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[Here we go准备 Windows 7/10 64bits Hexo v3.x.y nodejs 64 bits git for windows setup安装软件 安装nodejs下载安装nodejs: (http://www.runoob.com/nodejs/nodejs-install-setup.html) 安装git下载安装git: (http://git-scm.com/download/) 安装Hexo并创建本地博客1234567$ cd /d/$ mkdir hexo # 建立文件夹放本地博客$ cd hexo$ npm install -g hexo # 安装hexo$ hexo init$ hexo g # 或者hexo generate, 生成本地博客静态页面$ hexo s # 或者hexo server, 启动本地web服务, http://localhost:4000/本地查看博客主页 注册github并建立repo 注册github账号免费注册：www.github.com注册完记住你的邮箱地址和用户名例如abcd, 用户名就是你的github账号 建立博客用的repo登录github后, 点击左上角图标, 选择”New repository”, 填写”Repository Name”,注意一定符合下面的格式,最后”Create repository”, abcd.github.io的repo就建好了。abcd.github.io(abcd就是你实际注册的github账号)本地hexo博客部署到github 修改hexo配置打开hexo/_config.yml, 修改为如下123456# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: git repository: https://abcd@github.com/abcd/abcd.github.io.git # 使用https方式部署到远程repo，abcd是你实际注册的github账号 branch: master 远程repo的地址可以从github里查到, 进入你的repo: abcd.github.io, 点击”clone or download”, 点击”use https”, 里面的地址就是你的远程repo地址.注意_config.yml里的地址还需要配置用户名@,否则后面部署时会报错.https://github.com/abcd/abcd.github.io.git (远程repo地址)https://abcd@github.com/abcd/abcd.github.io.git (加了用户名的远程repo地址) 推送到远程repo 12345$ git init$ git add .$ git commit -m &quot;first commit&quot;$ git remote add origin git@github.com:abcd/abcd.github.io.git$ git push -u origin master 本地重新生成并部署到远程repo 12$ hexo generate$ hexo deploy #或者组合命令 hexo d -g 如果出现错误:1ERROR Deployer not found: git 则需要安装1npm install hexo-deployer-git --save]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>github, hexo</tag>
-      </tags>
-  </entry>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[读书-三体]]></title>
+      <url>/2017/10/16/%E8%AF%BB%E4%B9%A6-%E4%B8%89%E4%BD%93/</url>
+      <content type="html"><![CDATA[<p>我高中时代就开始读刘慈欣的作品了，那时他写短篇和长篇科幻小说，<a id="more"></a><br>他是科幻世界杂志的常客。那个年代，中国科幻作家为数不多，刘慈欣的作品风格与其他人不同。<br>他的作品想象瑰丽宏大，视角往往是宇宙太阳系，而且他有理科背景，所以作品是比较硬气的，行话叫做硬科幻。<br>所以读到他的三体时，自然觉得想象力很出色，但并没有感到特别的震撼，因为我对他作品风格是熟悉的。<br>还是熟悉的味道，只是短篇变成了长篇。<br>当全世界都在膜拜三体时，连高晓松都在节目里说这是十年来最好的小说时，我仅微微一笑。读完第一部，正在读第二部，希望能震撼到我。</p>
+<p>这是一部理工科出身的人都会喜欢的书。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 科幻 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 三体，科幻 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[读书 - 人类简史]]></title>
+      <url>/2017/10/03/%E8%AF%BB%E4%B9%A6-%E4%BA%BA%E7%B1%BB%E7%AE%80%E5%8F%B2/</url>
+      <content type="html"><![CDATA[<p><img src="/images/bhh.jpg" alt=""></p>
+<p>刚开始看这本书&lt;人类简史: A Brief History of Humankind&gt;<br>这书作者是尤瓦尔·赫拉利，犹太人，以色列历史学家，牛津大学博士, 70后，我想很多人是奔着作者来看书的。<a id="more"></a><br>这书本质上还不能算是历史书，豆瓣上有人说是博物书，大概正确。因为作者从非常大视角，用非常短的篇幅讲述了人类的历史。<br>仅仅时间轴线上有历史书的特点，但叙述人类文明的进展，用的都是生物学、心理学、地理学、物理学等的知识。所以作者知识渊博，涉猎广泛，这种类型的历史学家真的很少。<br>作者有的观点真的振聋发聩，比如作者认为世界上没有国家，没有公平和正义，这些都是智人时代人们想象出来的概念，用来组织大规模的人群。<br>而这种煽动和八卦的能力，正是智人超越了其他人类族群的原因之一</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 历史 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 人类简史 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[树莓派做webserver]]></title>
+      <url>/2017/10/03/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%81%9Awebserver/</url>
+      <content type="html"><![CDATA[<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
+<li>树莓派2代B型</li>
+<li>无线网卡<h3 id="树莓派做本地web-server"><a href="#树莓派做本地web-server" class="headerlink" title="树莓派做本地web server"></a>树莓派做本地web server</h3></li>
+<li>安装Raspbian OS<br>以树莓派2代B型为例。<a id="more"></a></li>
+<li>树莓派无线网卡上网<br>建议购买Pi时顺便买个USB无线网卡，某宝20多元一个，我用的就是下图这个，<img src="/images/edup.jpg" alt=""><br>这个在Raspbian系统上是即插即用的，因为Raspbian本身已经包含了它的驱动。<br>插上无线网卡，Pi上电完成之后，在命令行模式下，使用iwconfig查看下无线网卡是否已经被Pi识别出来，如图wlan0就是网线网卡（截图是无线网卡已经连接上家里路由器了，TP-LINK_LEWIS正是家里无线路由器的SSID）<img src="/images/iwconfig.png" alt=""><br>接下来需要配置无线网卡使Pi能够通过无线网卡连接到家里的无线路由器，修改配置文件：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/network/interfaces（Raspbian默认是没有安装vim的，这里可以使用nano代替vi）</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/images/interfaces.png" alt=""><br>wpa-psk就是家里路由器的无线密码。<br>注意：这里配置的是静态IP地址192.168.1.110而不是DHCP动态获取IP的方式。为什么要用静态IP呢？因为后面要用到端口映射，Pi的IP变来变去的话，端口映射也就得跟着改来改去实在不方便。<br>修改完配置文件保存后，重启Pi的网络：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/networking restart</div></pre></td></tr></table></figure></p>
+<p>使用ifconfig查看网络配置是否生效：<br><img src="/images/ifconfig.png" alt=""><br>Pi已经通过USB无线网卡连接到家里的路由器了!</p>
+<ul>
+<li>用个人电脑管理树莓派</li>
+<li>树莓派webserver安装和配置</li>
+</ul>
+<h3 id="树莓派做外网可访问的web-server"><a href="#树莓派做外网可访问的web-server" class="headerlink" title="树莓派做外网可访问的web server"></a>树莓派做外网可访问的web server</h3>]]></content>
+      
+        <categories>
+            
+            <category> 树莓派 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 树莓派, Raspbian </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Windows下用github和Hexo创建博客]]></title>
+      <url>/2017/10/03/Windows%E4%B8%8B%E7%94%A8github%E5%92%8CHexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<h2 id="Here-we-go"><a href="#Here-we-go" class="headerlink" title="Here we go"></a>Here we go</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
+<li>Windows 7/10 64bits</li>
+<li>Hexo v3.x.y</li>
+<li>nodejs</li>
+<li>64 bits git for windows setup<h3 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h3></li>
+<li>安装nodejs<br>下载安装nodejs: (<a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external">http://www.runoob.com/nodejs/nodejs-install-setup.html</a>)</li>
+<li>安装git<br>下载安装git: (<a href="http://git-scm.com/download/" target="_blank" rel="external">http://git-scm.com/download/</a>)</li>
+<li>安装Hexo并创建本地博客<a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ cd /d/</div><div class="line">$ mkdir hexo # 建立文件夹放本地博客</div><div class="line">$ cd hexo</div><div class="line">$ npm install -g hexo # 安装hexo</div><div class="line">$ hexo init</div><div class="line">$ hexo g # 或者hexo generate, 生成本地博客静态页面</div><div class="line">$ hexo s # 或者hexo server, 启动本地web服务, http://localhost:4000/本地查看博客主页</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="注册github并建立repo"><a href="#注册github并建立repo" class="headerlink" title="注册github并建立repo"></a>注册github并建立repo</h3><ul>
+<li>注册github账号<br>免费注册：www.github.com<br>注册完记住你的邮箱地址和用户名例如abcd, 用户名就是你的github账号</li>
+<li>建立博客用的repo<br>登录github后, 点击左上角图标, 选择”New repository”, 填写”Repository Name”,<br>注意一定符合下面的格式,最后”Create repository”, abcd.github.io的repo就建好了。<br>abcd.github.io(abcd就是你实际注册的github账号)<h3 id="本地hexo博客部署到github"><a href="#本地hexo博客部署到github" class="headerlink" title="本地hexo博客部署到github"></a>本地hexo博客部署到github</h3></li>
+<li>修改hexo配置<br>打开hexo/_config.yml, 修改为如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: https://abcd@github.com/abcd/abcd.github.io.git # 使用https方式部署到远程repo，abcd是你实际注册的github账号</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>远程repo的地址可以从github里查到, 进入你的repo: abcd.github.io, 点击”clone or download”, 点击”use https”, 里面的地址就是你的远程repo地址.注意_config.yml里的地址还需要配置用户名@,否则后面部署时会报错.<br><a href="https://github.com/abcd/abcd.github.io.git" target="_blank" rel="external">https://github.com/abcd/abcd.github.io.git</a> (远程repo地址)<br><a href="https://abcd@github.com/abcd/abcd.github.io.git" target="_blank" rel="external">https://abcd@github.com/abcd/abcd.github.io.git</a> (加了用户名的远程repo地址)</p>
+<ul>
+<li><p>推送到远程repo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git init</div><div class="line">$ git add .</div><div class="line">$ git commit -m &quot;first commit&quot;</div><div class="line">$ git remote add origin git@github.com:abcd/abcd.github.io.git</div><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure>
+</li>
+<li><p>本地重新生成并部署到远程repo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy #或者组合命令 hexo d -g</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果出现错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ERROR Deployer not found: git</div></pre></td></tr></table></figure></p>
+<p>则需要安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> github, hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
 </search>
